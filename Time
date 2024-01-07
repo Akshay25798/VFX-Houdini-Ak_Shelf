@@ -1,0 +1,28 @@
+import os
+from datetime import datetime
+
+try:
+    node = hou.pwd()
+    file = node.evalParm("file")
+    path = os.path.dirname(file)
+    name = os.listdir(path)
+    fList = []
+    for n in name:
+        newName = os.path.join(path, n)
+        fList.append(newName)
+    
+    file1 = min(fList, key=os.path.getmtime)
+    file2 = max(fList, key=os.path.getmtime)
+    
+    t1 = os.path.getmtime(file1)
+    t2 = os.path.getmtime(file2)
+    
+    d1 = datetime.fromtimestamp(t1)
+    d2 = datetime.fromtimestamp(t2)
+    
+    d3 =  d2 - d1
+    return(str(d3)[:-7] + "     hh/mm/ss")
+except:
+    return("None hh/mm/ss")
+    
+    
