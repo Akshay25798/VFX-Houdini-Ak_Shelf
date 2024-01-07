@@ -1,0 +1,12 @@
+import os 
+import hou
+try:
+    node = hou.pwd()
+    path = node.evalParm("file")
+    path = os.path.dirname(path)
+    if os.path.exists(path):
+        size = os.popen("du -h -c %s | tail -1| awk '{print $1}' "%(path)).read()
+        return(size)
+except:
+    return("None")
+    
