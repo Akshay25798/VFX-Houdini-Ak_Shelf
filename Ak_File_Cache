@@ -1,8 +1,6 @@
 import hou
 import os
 import shutil
-from mpc.houdini.houdiniAssets.storage.houdiniSceneFile import saveAndIncrementFileName
-from mpc.houdini.houdiniAssets.storage import houdiniSceneFile
 
 job = os.getenv("JOB")
 shot = os.getenv("SHOT")
