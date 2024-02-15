@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="Ak" label="Ak">
+    <memberTool name="Tempelate"/>
+    <memberTool name="Save"/>
+    <memberTool name="Take++"/>
+    <memberTool name="Color Code Nulls"/>
+    <memberTool name="Collision"/>
+    <memberTool name="Setup Render"/>
+    <memberTool name="Node_Share"/>
+  </toolshelf>
+
+  <tool name="Tempelate" label="Tempelate" icon="hicon:/SVGIcons.index?BUTTONS_date.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "123.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+
+exec(open(path).read())]]></script>
+  </tool>
+
+  <tool name="Save" label="Save" icon="hicon:/SVGIcons.index?DESKTOP_drive.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "Save_hip.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+
+exec(open(path).read())]]></script>
+  </tool>
+
+  <tool name="Take++" label="Take++" icon="hicon:/SVGIcons.index?VOP_add.svg">
+    <toolMenuContext name="viewer">
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
+      <contextNetType>DOP</contextNetType>
+      <contextNetType>LOP</contextNetType>
+    </toolMenuContext>
+    <toolMenuContext name="cop_viewer">
+      <contextNetType>COP2</contextNetType>
+    </toolMenuContext>
+    <toolMenuContext name="network">
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
+      <contextNetType>CHOP</contextNetType>
+      <contextNetType>ROP</contextNetType>
+      <contextNetType>SHOP</contextNetType>
+      <contextNetType>COP2</contextNetType>
+      <contextNetType>VOP</contextNetType>
+      <contextNetType>VOPNET</contextNetType>
+      <contextNetType>DOP</contextNetType>
+      <contextNetType>TOP</contextNetType>
+      <contextNetType>LOP</contextNetType>
+    </toolMenuContext>
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "Take++_hip.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+
+exec(open(path).read())]]></script>
+  </tool>
+
+  <tool name="Collision" label="Collision" icon="hicon:/SVGIcons.index?SHOP_vopsurface.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "Collision_Source.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+
+exec(open(path).read())]]></script>
+  </tool>
+
+  <tool name="Color Code Nulls" label="Color Code Nulls" icon="hicon:/SVGIcons.index?SHOP_surface.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "Color_Code_Nulls.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+
+exec(open(path).read())]]></script>
+  </tool>
+
+  <tool name="Node_Share" label="Node_Share" icon="hicon:/SVGIcons.index?VOP_structunpack.svg">
+    <toolMenuContext name="network">
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
+      <contextNetType>CHOP</contextNetType>
+      <contextNetType>ROP</contextNetType>
+      <contextNetType>SHOP</contextNetType>
+      <contextNetType>COP2</contextNetType>
+      <contextNetType>VOP</contextNetType>
+      <contextNetType>VOPNET</contextNetType>
+      <contextNetType>DOP</contextNetType>
+      <contextNetType>TOP</contextNetType>
+      <contextNetType>LOP</contextNetType>
+    </toolMenuContext>
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "Node_Share.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+exec(open(path).read())]]></script>
+  </tool>
+
+  <tool name="Setup Render" label="Setup Render" icon="hicon:/SVGIcons.index?DESKTOP_application.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+tool = "Render_Setup.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+
+exec(open(path).read())]]></script>
+  </tool>
+</shelfDocument>
