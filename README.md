@@ -8,4 +8,4 @@ Steps:
 2) And paste it in your users houdini scripts folder. (example : C/Users/Your_Name/Documents/houdini_version/scripts/)
 3) Copy paste Ak_Shelf to users houdini toolbar folder. (example : C/Users/Your_Name/Documents/houdini_version/toolbar/)
 
-Thnaks Enjoy.
+Thanks Enjoy.
