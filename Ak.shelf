@@ -18,22 +18,34 @@
   <tool name="Tempelate" label="Tempelate" icon="hicon:/SVGIcons.index?BUTTONS_date.svg">
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
 tool = "123.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
 
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 
   <tool name="Save" label="Save" icon="hicon:/SVGIcons.index?DESKTOP_drive.svg">
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
 tool = "Save_hip.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
 
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 
@@ -62,33 +74,51 @@ exec(open(path).read())]]></script>
     </toolMenuContext>
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
 tool = "Take++_hip.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
 
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 
   <tool name="Collision" label="Collision" icon="hicon:/SVGIcons.index?SHOP_vopsurface.svg">
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
 tool = "Collision_Source.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
 
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 
   <tool name="Color Code Nulls" label="Color Code Nulls" icon="hicon:/SVGIcons.index?SHOP_surface.svg">
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
 tool = "Color_Code_Nulls.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
 
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 
@@ -108,21 +138,35 @@ exec(open(path).read())]]></script>
     </toolMenuContext>
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
+
 tool = "Node_Share.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
+
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 
   <tool name="Setup Render" label="Setup Render" icon="hicon:/SVGIcons.index?DESKTOP_application.svg">
     <script scriptType="python"><![CDATA[import hou
 import os
+import platform
 tool = "Render_Setup.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
-path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+osName = platform.system()
 
+if osName=="Linux":
+    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+    
 exec(open(path).read())]]></script>
   </tool>
 </shelfDocument>
