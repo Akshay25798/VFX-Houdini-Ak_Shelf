@@ -8,29 +8,27 @@ import hou
 import os
 import platform
 
+title="Node Network Share and Load"
+msg = "Developed by Akshay Kumar\n Search select and accept."
 osName = platform.system()
 if osName=="Linux":
     slash = r"/"
+    user = os.getenv("USER")
+    userList = "/usr/people" #users dir
+    nodesBasePath = "/node_network_snippets" #folder for node network to save
+    saveTo = "/usr/people/%s/houdini19.5/node_network_snippets"%user #user houdini folder
 else:
     slash = r"\\"
-title="Fx Setup Share and Load"
-msg = "Developed by Akshay Kumar\n Search select and accept."
-user = os.getenv("USER")
-userList = "/usr/people"
-nodesBasePath = "/fxShareSetup"
-saveTo = "/jobs/academy/fxLibrary/sourceCode/houdini/hip/%s/fxShareSetup"%user
-
+    user = os.getenv("USERNAME")
+    userList = r"C:\Users" #users dir
+    nodesBasePath = r"\Documents\houdini19.5\node_network_snippets" #folder for node network to save
+    saveTo = r"C:\Users\%s\Documents\houdini19.5\node_network_snippets"%user #user houdini folder
 
 ###########----functions----#########
 
 isExist = os.path.exists(saveTo)
 if not isExist:
 	os.makedirs(saveTo)
-
-def SaveTo():
-    name = hou.ui.readInput(message="Provide the setup name", buttons=('OK','Cancle'), severity=hou.severityType.Message, default_choice=0, close_choice=1, title=title)
-    node_name.append(name[1].replace(" ","_"))
-    #print(name[1])
 
 def ExportHdaSetup():
     name = hou.ui.readInput(message="Provide the setup name", buttons=('OK','Cancle'), severity=hou.severityType.Message, default_choice=0, close_choice=1, title=title)
@@ -63,15 +61,20 @@ def LoadSetup():
         if os.path.exists(activeUserPath):
             nodes = os.listdir(activeUserPath)
             for node in nodes:
-                path = slash.join( [activeUser, node])
+                path = "/".join( [activeUser, node])
                 choices.append(path)
-    #print(choices)
+    print(choices)
+    print(path)
     OTL_Pick = hou.ui.selectFromTree(choices, picked=(), exclusive=False, message=msg, title=title, clear_on_cancel=True)
     if len(OTL_Pick)>0: #pick needed node network
         print("\n\n\n\n\n***********************************************************************************************\n")
         print("                                ->>%s<<-"%(title))
         print("\n***********************************************************************************************\n\n")
-        OTL_Pick = OTL_Pick[0].split(os.sep)
+        if osName=="Linux":
+            OTL_Pick = OTL_Pick[0].split(os.sep)
+        else:
+            OTL_Pick = OTL_Pick[0].replace("/","\\")
+            OTL_Pick = OTL_Pick.split(os.sep)
         print("Loading from : " + OTL_Pick[0])
         print("Node network name : " + OTL_Pick[1])
         File = slash.join([ saveTo[:-(len(nodesBasePath)+len(user))] , OTL_Pick[0] , nodesBasePath , OTL_Pick[1] ])
