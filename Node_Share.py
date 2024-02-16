@@ -33,30 +33,26 @@ def SaveTo():
     #print(name[1])
 
 def ExportHdaSetup():
-    allNodes = hou.selectedNodes()
-    if len(allNodes)==0:
-        hou.ui.displayMessage("     Please Select any node to Export/Share.          ",title=title, default_choice=0, close_choice=1)
-    else:
-        name = hou.ui.readInput(message="Provide the setup name", buttons=('OK','Cancle'), severity=hou.severityType.Message, default_choice=0, close_choice=1, title=title)
-        node_name = name[1].replace(" ","_")
+    name = hou.ui.readInput(message="Provide the setup name", buttons=('OK','Cancle'), severity=hou.severityType.Message, default_choice=0, close_choice=1, title=title)
+    node_name = name[1].replace(" ","_")
+    if name[0]==0:
+        print("\n\n\n\n\n***********************************************************************************************\n")
+        print("                                ->>%s<<-"%(title))
+        print("\n***********************************************************************************************\n\n")
         print(node_name)
-        if len(node_name)!=0:
-            print("\n\n\n\n\n***********************************************************************************************\n")
-            print("                                ->>%s<<-"%(title))
-            print("\n***********************************************************************************************\n\n")
-            node = hou.selectedNodes()[0]
-            context = node.type().category().name()
-            allItems = hou.selectedItems()
-            parent = node.parent()
-            saveToFile = saveTo + slash +"%s.ak"%(context+"_"+node_name)
-            parent.saveItemsToFile(allItems,saveToFile)
-            print("Node network name : " + node_name)
-            print("Node network context : " + context)
-            print("Network file path : " + saveToFile)
-            print("\n\n***********************************************************************************************\n")
-            print("                           Done!!! Set up saved successfully.")
-            print("                               Developed by Akshay Kumar")
-            print("\n\n***********************************************************************************************\n")
+        node = hou.selectedNodes()[0]
+        context = node.type().category().name()
+        allItems = hou.selectedItems()
+        parent = node.parent()
+        saveToFile = saveTo + slash +"%s.ak"%(context+"_"+node_name)
+        parent.saveItemsToFile(allItems,saveToFile)
+        print("Node network name : " + node_name)
+        print("Node network context : " + context)
+        print("Network file path : " + saveToFile)
+        print("\n\n***********************************************************************************************\n")
+        print("                           Done!!! Set up saved successfully.")
+        print("                               Developed by Akshay Kumar")
+        print("\n\n***********************************************************************************************\n")
 
 def LoadSetup():
     choices = []
@@ -105,7 +101,7 @@ def LoadSetup():
 
 def Clean():
     fileList = hou.ui.selectFromTree(os.listdir(saveTo), picked=(), exclusive=False, message=msg+"\nSelect file to Delete.", title=title, clear_on_cancel=True)
-    if len(fileList[0])!=0:
+    if len(fileList)!=0:
         print("\n\n\n\n\n***********************************************************************************************\n")
         print("                                ->>Clean Node Setup<<-")
         print("\n***********************************************************************************************\n\n")
