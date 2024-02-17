@@ -2,6 +2,7 @@ Ak_Shelf for houdini.
 Some very handy and daily usable scripts for making workflow faster and easier.
 To install dubble click Win_exe or Linux_exe accroding to your operating system.
 
+Prerequisite : Python3 should me installed.
 Note : There is 123.py script also if you are allready using 123.py please do not copy that one.
 If something went wrong you can install this manually also.
 Steps:
