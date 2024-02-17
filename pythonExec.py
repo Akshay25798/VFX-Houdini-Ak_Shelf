@@ -2,9 +2,10 @@ import os
 import shutil
 import platform
 
-title="Copy scripts to user houdini folder."
+title="Ak Shelf - Copying scripts to user's houdini folder."
 msg = "Developed by Akshay Kumar"
 donotCopy = ["Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shelf", "README.md"]
+donotCopy123 = ["Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shelf", "README.md", "123.py"]
 osName = platform.system()
 if osName=="Linux":
     slash = r"/"
@@ -32,17 +33,29 @@ for houdini in houdiniVer:
 currentFolder = os.path.dirname(os.path.realpath(__file__))
 scripts = os.listdir(currentFolder)
 print("-------------------------------"+title+"------------------------------\n")
-print("All scripts : " + str(scripts) + "\n")
+print("All scripts : " + str(scripts) + "\n\n\n")
+print("There is 123.py script also if you are allready using 123.py please select 'NO'.")
+userInput = input("Want to copy 123.py also [Yes/No] : ").upper()
+while userInput not in ["YES", "NO"]:
+    userInput = input("Want to copy 123.py also [Yes/No] : ").upper()
+
 for script in scripts:
-    if script not in donotCopy:
-        scriptPath = slash.join([currentFolder, script])
-        shutil.copy(scriptPath, scriptsFolder) #copy python scripts to user houdini foler
-        print(scriptPath + "    ----> Copying ---->    " + scriptsFolder+slash + script)
+    if userInput=="YES":
+        if script not in donotCopy:
+            scriptPath = slash.join([currentFolder, script])
+            shutil.copy(scriptPath, scriptsFolder) #copy python scripts to user houdini foler
+            print(scriptPath + "    ----> Copying ---->    " + scriptsFolder+slash + script)
+    if userInput=="NO":
+        if script not in donotCopy123:
+            scriptPath = slash.join([currentFolder, script])
+            shutil.copy(scriptPath, scriptsFolder) #copy python scripts to user houdini foler
+            print(scriptPath + "    ----> Copying ---->    " + scriptsFolder+slash + script)
+
     if script == "Ak.shelf":
         toolbarPath = slash.join([currentFolder, script])
         shutil.copy(toolbarPath, toolbarFolder) #copy Ak.shelf file to user houdini folder
         print("\n"+toolbarPath + "    ----> Copying ---->    " + toolbarFolder+slash + script)
         
-print("\n-------------------------------Done,"+msg+"------------------------------\n")
+print("\nDone you are all set, Enjoy...\n"+msg)
 
 input()
