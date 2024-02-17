@@ -1,8 +1,7 @@
-
 # Ak_Shelf for houdini
 Some very handy and daily usable scripts for making workflow faster and easier.
 <br>
-Prerequisite : Python3 should me installed.
+Prerequisite : Python3 should me installed and Houdini 19.5 or higher.
 <br>
 Note : There is 123.py script also if you are allready using 123.py please do not copy that one.
 <br>
