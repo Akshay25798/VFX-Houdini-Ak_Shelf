@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python "./pythonExec.py"
+python "./main.py"
