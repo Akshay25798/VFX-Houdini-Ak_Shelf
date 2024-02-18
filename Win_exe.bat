@@ -3,5 +3,5 @@
 import os
 currentFolder = os.path.dirname(os.path.realpath(__file__))
 
-path = currentFolder+"\pythonExec.py"
+path = currentFolder+"\main.py"
 exec(open(path).read())
