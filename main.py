@@ -4,8 +4,8 @@ import platform
 
 title="Ak Shelf - Copying scripts to user's houdini folder."
 msg = "Developed by Akshay Kumar"
-donotCopy = ["Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shelf", "README.md"]
-donotCopy123 = ["Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shelf", "README.md", "123.py"]
+donotCopy = [".git", "Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shelf", "README.md"]
+donotCopy123 = [".git", "Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shelf", "README.md", "123.py"]
 osName = platform.system()
 if osName=="Linux":
     slash = r"/"

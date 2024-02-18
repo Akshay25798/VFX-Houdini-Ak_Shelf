@@ -63,8 +63,8 @@ def LoadSetup():
             for node in nodes:
                 path = "/".join( [activeUser, node])
                 choices.append(path)
-    print(choices)
-    print(path)
+    #print(choices)
+    #print(path)
     OTL_Pick = hou.ui.selectFromTree(choices, picked=(), exclusive=False, message=msg, title=title, clear_on_cancel=True)
     if len(OTL_Pick)>0: #pick needed node network
         print("\n\n\n\n\n***********************************************************************************************\n")
