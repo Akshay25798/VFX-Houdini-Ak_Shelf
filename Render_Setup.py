@@ -1,10 +1,9 @@
 ###########----Create render geo for fx elements Mantra setup in OUT----##########
 #Author : Akshay Kumar
 #Version : 1.1
-#Modified Date : 15/02/2024
+#Modified Date : 25/02/2024
 ##################################################################################
 import hou
-import sys
 
 root = hou.node("/obj/")
 root_out = hou.node("/out/")
@@ -27,6 +26,7 @@ def RenderGeo():
         selected = node.path()
         selected_name = node.name()
         new_name = selected_name.replace("OUT_","")
+        new_name = selected_name.replace("RENDER_","")
 
         if(selected != None):
             #create nodes
@@ -60,27 +60,20 @@ def Mantra():
         parent = node.parent()
         name = node.name()
         new_name = name.replace("OUT_","")
+        new_name = name.replace("RENDER_","")
         path = selected.replace(name,"")
         render_node = ("/obj/"+(name)+"/render/OUT")
 
         if(selected != None):
             #create nodes
             mantra = root_out.createNode("ifd", "RENDER_" + new_name)
-            mpcRel = root_out.createNode("null", "rndr_" + new_name)
             #set parameters
             force_obj = mantra.parm("forceobject").set("RENDER_" + new_name)
             candidate_obj = mantra.parm("vobject").set("")
             motion_blur = mantra.parm("allowmotionblur").set(1)
             mantra.setColor(Green)
-            mpcRel.setColor(Black)
-            #set connections
-            mpcRel.setNextInput(mantra)
             #set position
             mantra.moveToGoodPosition()
-            mpcRel.moveToGoodPosition()
-            #set renderflag
-            #null.setDisplayFlag(True)
-            #null.setRenderFlag(True)
 
 ##############----Logic----########################
 
@@ -92,5 +85,5 @@ if(len(check)>0):
     else:
         hou.ui.displayMessage("You have selected OBJ level node please select SOP level node.",title=title)
 else:
-    hou.ui.displayMessage("Please select node to create render geometry and mpc mantra node.",title=title)
+    hou.ui.displayMessage("Please select node to create render geometry and mantra node.",title=title)
 ###########----finish----##########
