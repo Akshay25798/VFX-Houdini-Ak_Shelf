@@ -32,45 +32,32 @@ def RenderGeo():
             #create nodes
             render_geo = root.createNode("geo", "RENDER_" + new_name)
 
-            force_name = render_geo.name()
-
             obj_merge = render_geo.createNode("object_merge")
             #set parameters
-            import_ = obj_merge.parm("objpath1").set(selected)
-            trans = obj_merge.parm("xformtype").set(1)
-            velocity_blur = render_geo.parm("geo_velocityblur").set(1)
-
-            null = render_geo.createNode("null", "OUT")
-
-            null.setNextInput(obj_merge)
+            obj_merge.parm("objpath1").set(selected)
+            obj_merge.parm("xformtype").set(1)
+            render_geo.parm("geo_velocityblur").set(1)
+            render_geo.setColor(Green)
 
             render_geo.moveToGoodPosition()
             obj_merge.moveToGoodPosition()
-            null.moveToGoodPosition()
-
-            null.setDisplayFlag(True)
-            null.setRenderFlag(True)
-            #print(force_name)
 
 
 
 def Mantra():
     for node in hou.selectedNodes():
         selected = node.path()
-        parent = node.parent()
         name = node.name()
         new_name = name.replace("OUT_","")
         new_name = name.replace("RENDER_","")
-        path = selected.replace(name,"")
-        render_node = ("/obj/"+(name)+"/render/OUT")
 
         if(selected != None):
             #create nodes
             mantra = root_out.createNode("ifd", "RENDER_" + new_name)
             #set parameters
-            force_obj = mantra.parm("forceobject").set("RENDER_" + new_name)
-            candidate_obj = mantra.parm("vobject").set("")
-            motion_blur = mantra.parm("allowmotionblur").set(1)
+            mantra.parm("forceobject").set("RENDER_" + new_name)
+            mantra.parm("vobject").set("")
+            mantra.parm("allowmotionblur").set(1)
             mantra.setColor(Green)
             #set position
             mantra.moveToGoodPosition()
