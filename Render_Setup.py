@@ -32,7 +32,7 @@ def RenderGeo():
             #create nodes
             render_geo = root.createNode("geo", "RENDER_" + new_name)
 
-            obj_merge = render_geo.createNode("object_merge")
+            obj_merge = render_geo.createNode("object_merge", "IN_" + new_name)
             #set parameters
             obj_merge.parm("objpath1").set(selected)
             obj_merge.parm("xformtype").set(1)
