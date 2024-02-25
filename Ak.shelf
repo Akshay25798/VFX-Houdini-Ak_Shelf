@@ -25,7 +25,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
@@ -42,7 +42,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
@@ -81,7 +81,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
@@ -98,7 +98,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
@@ -115,7 +115,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
@@ -146,7 +146,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
@@ -163,7 +163,7 @@ houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 
 if osName=="Linux":
-    path = r"/usr/people/{}/{}/scripts/{}".format(user,houdini,tool)
+    path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
     
