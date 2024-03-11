@@ -28,8 +28,10 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 
   <tool name="Save" label="Save" icon="hicon:/SVGIcons.index?DESKTOP_drive.svg">
@@ -45,8 +47,10 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 
   <tool name="Take++" label="Take++" icon="hicon:/SVGIcons.index?VOP_add.svg">
@@ -84,8 +88,10 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 
   <tool name="Collision" label="Collision" icon="hicon:/SVGIcons.index?SHOP_vopsurface.svg">
@@ -101,8 +107,10 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 
   <tool name="Color Code Nulls" label="Color Code Nulls" icon="hicon:/SVGIcons.index?SHOP_surface.svg">
@@ -118,8 +126,10 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 
   <tool name="Node_Share" label="Node_Share" icon="hicon:/SVGIcons.index?VOP_structunpack.svg">
@@ -149,8 +159,10 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 
   <tool name="Setup Render" label="Setup Render" icon="hicon:/SVGIcons.index?DESKTOP_application.svg">
@@ -166,7 +178,9 @@ if osName=="Linux":
     path = r"~/{}/scripts/{}".format(houdini,tool)
 else:
     path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
-    
-exec(open(path).read())]]></script>
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
   </tool>
 </shelfDocument>

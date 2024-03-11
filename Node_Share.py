@@ -10,19 +10,20 @@ import platform
 
 title="Node Network Share and Load"
 msg = "Developed by Akshay Kumar\n Search select and accept."
+houVersion = "houdini" + hou.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()
 if osName=="Linux":
     slash = r"/"
     user = os.getenv("USER")
     userList = "/usr/people" #users dir
     nodesBasePath = "/node_network_snippets" #folder for node network to save
-    saveTo = "/usr/people/%s/houdini19.5/node_network_snippets"%user #user houdini folder
+    saveTo = "~/%s/%s/node_network_snippets"%(user, houVersion) #user houdini folder
 else:
     slash = r"\\"
     user = os.getenv("USERNAME")
     userList = r"C:\Users" #users dir
-    nodesBasePath = r"\Documents\houdini19.5\node_network_snippets" #folder for node network to save
-    saveTo = r"C:\Users\%s\Documents\houdini19.5\node_network_snippets"%user #user houdini folder
+    nodesBasePath = r"\Documents\%s\node_network_snippets"%(houVersion) #folder for node network to save
+    saveTo = r"C:\Users\%s\Documents\%s\node_network_snippets"%(user, houVersion) #user houdini folder
 
 ###########----functions----#########
 
