@@ -8,5 +8,5 @@ import hou
 isNew = hou.hipFile.isNewFile()
 if not isNew==True:
     hou.hipFile.saveAndIncrementFileName()
-    print("Take++ is sucessfull for : "+hou.hipFile.name())
+    #print("Take++ is sucessfull for : "+hou.hipFile.name())
 ###########----finish----##########

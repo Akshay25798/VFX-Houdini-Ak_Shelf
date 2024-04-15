@@ -24,9 +24,10 @@ for node in hou.selectedNodes():
 def RenderGeo():
     for node in hou.selectedNodes():
         selected = node.path()
-        selected_name = node.name()
-        new_name = selected_name.replace("OUT_","")
-        new_name = selected_name.replace("RENDER_","")
+        selected_name = node.name().upper()
+        new_name = selected_name.replace("OUT","")
+        new_name = new_name.replace("RENDER","")
+        #print(new_name)
 
         if(selected != None):
             #create nodes
@@ -47,9 +48,9 @@ def RenderGeo():
 def Mantra():
     for node in hou.selectedNodes():
         selected = node.path()
-        name = node.name()
-        new_name = name.replace("OUT_","")
-        new_name = name.replace("RENDER_","")
+        name = node.name().upper()
+        new_name = name.replace("OUT","")
+        new_name = new_name.replace("RENDER","")
 
         if(selected != None):
             #create nodes

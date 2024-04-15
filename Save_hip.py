@@ -18,7 +18,7 @@ def SAVE_HIP():
             hou.hipFile.setName(saveFilePath+"/"+fileName[1]+"_v000.hip")
             #saving the file
             hou.hipFile.save()
-            print("HIP file is saved sucessfully as : " + hou.hipFile.name())
+            #print("HIP file is saved sucessfully as : " + hou.hipFile.name())
 
 
 SAVE_HIP()
