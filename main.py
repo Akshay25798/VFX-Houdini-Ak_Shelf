@@ -9,8 +9,8 @@ donotCopy123 = [".git", "Win_exe.bat", "pythonExec.py", "Linux_exe.sh", "Ak.shel
 osName = platform.system()
 if osName=="Linux":
     slash = r"/"
-    user = os.getenv("USERNAME")
-    baseFolder = "~/" #user houdini folder
+    user = os.getenv("USER")
+    baseFolder = "/home/%s"%(user) #user houdini folder
 else:
     slash = r"\\"
     user = os.getenv("USERNAME")
