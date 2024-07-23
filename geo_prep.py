@@ -27,7 +27,15 @@ def keep_seperated(selection):
             scale.setDisplayFlag(True)
             scale.setRenderFlag(True)
 
-            scale.setNextInput(obj_merge)
+            convert = geo_prep.createNode("convert")
+            delete = geo_prep.createNode("delete")
+            delete.parm("negate").set(1)
+            delete.parm("entity").set(2)
+            delete.parm("geotype").set(9)
+
+            convert.setNextInput(obj_merge)
+            delete.setNextInput(convert)
+            scale.setNextInput(delete)
             geo_prep.layoutChildren()
 
     scene_viewer = hou.ui.paneTabOfType(hou.paneTabType.SceneViewer)
@@ -54,7 +62,15 @@ def merge_in_one(selection):
             scale.setDisplayFlag(True)
             scale.setRenderFlag(True)
 
-            scale.setNextInput(obj_merge)
+            convert = geo_prep.createNode("convert")
+            delete = geo_prep.createNode("delete")
+            delete.parm("negate").set(1)
+            delete.parm("entity").set(2)
+            delete.parm("geotype").set(9)
+
+            convert.setNextInput(obj_merge)
+            delete.setNextInput(convert)
+            scale.setNextInput(delete)
             geo_prep.layoutChildren()
 
     scene_viewer = hou.ui.paneTabOfType(hou.paneTabType.SceneViewer)
