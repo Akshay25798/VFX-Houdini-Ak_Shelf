@@ -15,7 +15,8 @@ def SAVE_HIP():
         space = "                                                                     \n\n"
         fileName = hou.ui.readInput(message=space+msg+"\nSave Path : "+saveFilePath+space,buttons=("Ok","Cancel"),close_choice=1)
         if fileName[0]==0:
-            hou.hipFile.setName(saveFilePath+"/"+fileName[1]+"_v000.hip")
+            name = fileName[1].replace(" ", "_")
+            hou.hipFile.setName(saveFilePath+"/"+name+"_v0000.hip")
             #saving the file
             hou.hipFile.save()
             #print("HIP file is saved sucessfully as : " + hou.hipFile.name())
