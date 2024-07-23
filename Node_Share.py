@@ -15,7 +15,7 @@ osName = platform.system()
 if osName=="Linux":
     slash = r"/"
     user = os.getenv("USER")
-    userList = "/usr/people" #users dir
+    userList = "/home/" #users dir
     nodesBasePath = "/node_network_snippets" #folder for node network to save
     saveTo = "~/%s/%s/node_network_snippets"%(user, houVersion) #user houdini folder
 else:
