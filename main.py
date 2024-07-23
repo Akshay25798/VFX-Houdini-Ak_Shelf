@@ -10,7 +10,7 @@ osName = platform.system()
 if osName=="Linux":
     slash = r"/"
     user = os.getenv("USER")
-    baseFolder = "/home/%s"%(user) #user houdini folder
+    baseFolder = "/home/%s"%(user) #user houdini 
 else:
     slash = r"\\"
     user = os.getenv("USERNAME")
