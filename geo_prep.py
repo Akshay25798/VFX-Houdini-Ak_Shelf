@@ -23,7 +23,7 @@ def keep_seperated(selection):
             obj_merge.parm("createprimstring").set(1)
 
             scale = geo_prep.createNode("xform", "scale_down")
-            scale.parm("scale").set(0.1)
+            scale.parm("scale").set(0.01)
             scale.setDisplayFlag(True)
             scale.setRenderFlag(True)
 
@@ -58,7 +58,7 @@ def merge_in_one(selection):
             obj_merge.parm("createprimstring").set(1)
 
             scale = geo_prep.createNode("xform", "scale_down")
-            scale.parm("scale").set(0.1)
+            scale.parm("scale").set(0.01)
             scale.setDisplayFlag(True)
             scale.setRenderFlag(True)
 
