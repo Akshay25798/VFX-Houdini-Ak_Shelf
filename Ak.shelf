@@ -9,10 +9,12 @@
     <memberTool name="Tempelate"/>
     <memberTool name="Save"/>
     <memberTool name="Take++"/>
-    <memberTool name="Color Code Nulls"/>
-    <memberTool name="Collision"/>
+    <memberTool name="abc_import"/>
+    <memberTool name="geo_prep"/>
     <memberTool name="Setup Render"/>
     <memberTool name="Node_Share"/>
+    <memberTool name="Collision"/>
+    <memberTool name="Color Code Nulls"/>
   </toolshelf>
 
   <tool name="Tempelate" label="Tempelate" icon="hicon:/SVGIcons.index?BUTTONS_date.svg">
@@ -170,6 +172,46 @@ except:
 import os
 import platform
 tool = "Render_Setup.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+osName = platform.system()
+
+if osName=="Linux":
+    path = r"~/{}/scripts/{}".format(houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
+  </tool>
+
+  <tool name="abc_import" label="abc import" icon="hicon:/SVGIcons.index?PRIMITIVES_alembicref.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+import platform
+
+tool = "abc_import.py"
+user = os.getenv("USERNAME")
+houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
+osName = platform.system()
+
+if osName=="Linux":
+    path = r"~/{}/scripts/{}".format(houdini,tool)
+else:
+    path = r"C:\Users\{}\Documents\{}\scripts\{}".format(user,houdini,tool)
+try:
+    exec(open(path).read())
+except:
+    execfile(path)]]></script>
+  </tool>
+
+  <tool name="geo_prep" label="Geo Prep" icon="hicon:/SVGIcons.index?MISC_present.svg">
+    <script scriptType="python"><![CDATA[import hou
+import os
+import platform
+
+tool = "geo_prep.py"
 user = os.getenv("USERNAME")
 houdini = "houdini"+os.getenv("HOUDINI_VERSION")[:-4]
 osName = platform.system()

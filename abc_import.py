@@ -1,7 +1,7 @@
 ##########----abc_improt----###########
 #Author : Akshay Kumar
 #Version : 1.0
-#Modified Date : 23/07/2024
+#Modified Date : 24/07/2024
 #############################################################
 
 import os
@@ -23,11 +23,13 @@ def import_abc(path):
     for (root, dir, files) in os.walk(path[0]):
         for file in files:
             if file.endswith(".abc"):
-                abc_dict[file.replace(".abc", "")] = (os.sep.join([root, file]))
-
-
+                key = file.replace(".abc", "")
+                key = key.replace(" ", "_")
+                abc_dict[key] = (os.sep.join([root, file]))
+   
     for key, value in abc_dict.items():
         obj = hou.node("/obj/")
+        print(key)
 
         #create abc achrive nodes
         abc_achrive_node = obj.createNode("alembicarchive", key)
