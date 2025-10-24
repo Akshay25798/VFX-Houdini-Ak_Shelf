@@ -1,7 +1,7 @@
 #####################----setiing up the default template----#####################
 #Author : Akshay Kumar
-#Version : 1.1
-#Modified Date : 15/02/2024
+#Version : 1.2
+#Modified Date : 24/10/2025
 ##################################################################################
 import hou
 
@@ -23,9 +23,9 @@ class Default_Template():
         self.outSize = hou.Vector2(20,12)
 
         #Position
-        self.assetPos = hou.Vector2(0,0)
-        self.camPos = hou.Vector2(13,0)
-        self.prepPos = hou.Vector2(13*2,0)
+        #self.assetPos = hou.Vector2(0,0)
+        #self.camPos = hou.Vector2(13,0)
+        self.camPos = hou.Vector2(13*2,0)
         self.simPos = hou.Vector2(13*3,0)
         self.rndrPos = hou.Vector2(13*4,0)
 
@@ -34,12 +34,6 @@ class Default_Template():
 
         ###create obj network box in OBJ context
 
-        #asset
-        self.asset = self.obj.createNetworkBox()
-        self.asset.setColor(self.gray)
-        self.asset.setSize(self.objSize)
-        self.asset.setPosition(self.assetPos)
-        self.asset.setComment("Asset")
 
         #light and self.camera
         self.cam = self.obj.createNetworkBox()
@@ -47,13 +41,6 @@ class Default_Template():
         self.cam.setSize(self.objSize)
         self.cam.setPosition(self.camPos)
         self.cam.setComment("camera and Light")
-
-        #geo self.prep
-        self.prep = self.obj.createNetworkBox()
-        self.prep.setColor(self.blue)
-        self.prep.setSize(self.objSize)
-        self.prep.setPosition(self.prepPos)
-        self.prep.setComment("Geo prep")
 
         #self.sim
         self.sim = self.obj.createNetworkBox()
@@ -70,22 +57,6 @@ class Default_Template():
         self.rndr.setComment("Render")
 
 
-        ###create obj network box in OUT context
-
-        #render
-        self.rndr_out = self.out.createNetworkBox()
-        self.rndr_out.setColor(self.green)
-        self.rndr_out.setSize(self.outSize)
-        self.rndr_out.setPosition(self.RNDRPos)
-        self.rndr_out.setComment("Renders")
-
-        #self.sim
-        self.sim_out = self.out.createNetworkBox()
-        self.sim_out.setColor(self.red)
-        self.sim_out.setSize(self.outSize)
-        self.sim_out.setPosition(self.SIMPos)
-        self.sim_out.setComment("caching")
-
     def Clear_Template(self):
         self.defaults = ["Asset", "camera and Light", "Geo prep", "sim", "Render", "caching", "Renders"]
         self.items = []
@@ -96,6 +67,10 @@ class Default_Template():
             if self.net_box.networkItemType().name() == 'NetworkBox':
                 if self.net_box.comment() in self.defaults:
                     self.net_box.destroy() 
+                    
+    def Set_Inital_Framerange(self):
+        hou.playbar.setFrameRange(1001, 1100)
+        hou.setFrame(1001)
 
 Tempelate = Default_Template()
 
@@ -105,5 +80,6 @@ except:
     pass
 finally:
     Tempelate.Create_Template()
+    Tempelate.Set_Inital_Framerange()
 
 #########>> FINISH << ##############
